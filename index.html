@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CinemaSphere - Movie Ticket Booking</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="manifest" href="./manifest.json"> 
+</head>
+<body>
+    <header>
+        <h1>CinemaSphere</h1>
+        <nav id="main-nav">
+            <a href="javascript:void(0);" class="icon" onclick="toggleNav()">
+                <i class="fa fa-bars"></i>
+            </a>
+            <div id="nav-links">
+                <a href="#now-showing">Now Showing</a>
+                <a href="#upcoming-movies">Upcoming</a>
+                <a href="#premium-screenings">Premium</a>
+                <a href="#3d-imax">3D/IMAX</a>
+                <a href="#discount-offers">Discounts</a>
+            </div>
+        </nav>    
+    </header>
+
+    <main>
+        <section id="now-showing" class="movie-section">
+            <h2>Now Showing</h2>
+            <div class="movie-grid">
+                <div class="movie-card movie-card-1">
+                    <img src="./images/my-fault-london-2025.jpg" alt="Movie 1">
+                    <h3>My fault -London</h3>
+                    <p>Price: Rs 600</p>
+                    <input type="number" value="0">
+                    <button>Add to Cart</button>
+                </div>
+                <div class="movie-card movie-card-2">
+                    <img src="./images/fateh-2025.jpg" alt="Movie 2">
+                    <h3>Fateh</h3>
+                    <p>Price: Rs 800</p>
+                    <input type="number" value="0">
+                    <button>Add to Cart</button>
+                </div>
+                <div class="movie-card movie-card-3">
+                    <img src="./images/back_in_ac.jpg" alt="Movie 2">
+                    <h3>BackinAction</h3>
+                    <p>Price: Rs 650</p>
+                    <input type="number" value="0">
+                    <button>Add to Cart</button>
+                </div>
+                <div class="movie-card movie-card-4">
+                    <img src="./images/inside_out.jpg" alt="Movie 2">
+                    <h3>Inside out2</h3>
+                    <p>Price: Rs 400</p>
+                    <input type="number" value="0">
+                    <button>Add to Cart</button>
+                </div>
+                <div class="movie-card movie-card-5">
+                    <img src="./images/the-electric-state-poster.webp" alt="Movie 2">
+                    <h3>The electrical state</h3>
+                    <p>Price: Rs 1000</p>
+                    <input type="number" value="0">
+                    <button>Add to Cart</button>
+                </div>
+                <div class="movie-card movie-card-6">
+                    <img src="./images/the-gorge.jpeg" alt="Movie 2">
+                    <h3>The gorge</h3>
+                    <p>Price: RS 1200</p>
+                    <input type="number" value="0">
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <br><br>
+
+        <section id="upcoming-movies" class="movie-section">
+            <h2>Upcoming Movies</h2>
+            <div class="movie-grid">
+                <div class="movie-card movie-card-7">
+                    <img src="./images/musafa.jpeg" alt="Upcoming Movie 1">
+                    <h3>Mufasa</h3>
+                    <p>Release Date: Soon</p>
+                    <input type="number" value="0">
+                    <button>Add to Cart</button>
+                </div>
+                <div class="movie-card movie-card-8">
+                    <img src="./images/fast-x-vertical-key-art.webp" alt="Upcoming Movie 1">
+                    <h3>Fast x</h3>
+                    <p>Release Date: Soon</p>
+                    <input type="number" value="0">
+                    <button>Add to Cart</button>
+                </div>
+                <div class="movie-card movie-card-9">
+                    <img src="./images/venom_2.webp" alt="Upcoming Movie 1">
+                    <h3>Venom2</h3>
+                    <p>Release Date: Soon</p>
+                    <input type="number" value="0">
+                    <button>Add to Cart</button>
+                </div>
+                <div class="movie-card movie-card-10">
+                    <img src="./images/dog_man.jpg" alt="Upcoming Movie 1">
+                    <h3>Dog man</h3>
+                    <p>Release Date: Soon</p>
+                    <input type="number" value="0">
+                    <button>Add to Cart</button>
+                </div>
+                <div class="movie-card movie-card-11">
+                    <img src="./images/pandd.webp" alt="Upcoming Movie 1">
+                    <h3>Paddington</h3>
+                    <p>Release Date: Soon</p>
+                    <input type="number" value="0">
+                    <button>Add to Cart</button>
+                </div>
+                <div class="movie-card movie-card-12">
+                    <img src="./images/F1_MOVIE.jpg" alt="Upcoming Movie 1">
+                    <h3>F1 Movie </h3>
+                    <p>Release Date: Soon</p>
+                    <input type="number" value="0">
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="premium-screenings" class="movie-section">
+            <h2>Premium Screenings</h2>
+            <div class="movie-grid"> 
+                <div class="movie-card movie-card movie-card-13">
+                    <img src="./images/bad_guys.jpg" alt="Premium Movie 1">
+                    <h3>Bad guys</h3>
+                    <p>Price: Rs 1000</p>
+                    <input type="number" value="0">
+                    <button>Add to Cart</button>
+                </div>
+                <div class="movie-card movie-card movie-card-14">
+                    <img src="./images/my_spy.jpeg" alt="Premium Movie 1">
+                    <h3>Myspy</h3>
+                    <p>Price: Rs 700</p>
+                    <input type="number" value="0">
+                    <button>Add to Cart</button>
+                </div>
+                <div class="movie-card movie-card-15">
+                    <img src="./images/sonic_3.jpg" alt="Premium Movie 1">
+                    <h3>Sonic 3</h3>
+                    <p>Price: Rs 900</p>
+                    <input type="number" value="0">
+                    <button>Add to Cart</button>
+                </div>
+                <div class="movie-card">
+                    <img src="./images/road_house.jpg" alt="Premium Movie 1">
+                    <h3>Road House</h3>
+                    <p>Price: Rs 1200</p>
+                    <input type="number" value="0">
+                    <button>Add to Cart</button>
+                </div>
+                <div class="movie-card">
+                    <img src="./images/Despicable_Me_4-802312771-large.jpg" alt="Premium Movie 1">
+                    <h3>Despicable Me 4</h3>
+                    <p>Price: Rs 1000</p>
+                    <input type="number" value="0">
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="3d-imax" class="movie-section">
+            <h2>3D/IMAX</h2>
+            <div class="movie-grid"> 
+                <div class="movie-card movie-card-18">
+                    <img src="./images/bad_guys.jpg" alt="Premium Movie 1">
+                    <h3>Bad guys</h3>
+                    <p>Price: Rs 1500</p>
+                    <input type="number" value="0">
+                    <button>Add to Cart</button>
+                </div>
+                <div class=" movie-card movie-card-19">
+                    <img src="./images/p_studio_moana_2_poster_now_available_f4281ff6.jpeg" alt="Premium Movie 1">
+                    <h3>Moana2</h3>
+                    <p>Price: Rs 2000</p>
+                    <input type="number" value="0">
+                    <button>Add to Cart</button>
+                </div>
+                <div class="movie-card movie-card-20">
+                    <img src="./images/Jurassic_World_Rebirth_poster.jpg" alt="Premium Movie 1">
+                    <h3>Jurassic Park</h3>
+                    <p>Price: Rs 3000</p>
+                    <input type="number" value="0">
+                    <button>Add to Cart</button>
+                </div>
+                <div class="movie-card movie-card-21">
+                    <img src="./images/GranTurismoMoviePoster.jpeg" alt="Premium Movie 1">
+                    <h3>Gran Turismo</h3>
+                    <p>Price: Rs 2000</p>
+                    <input type="number" value="0">
+                    <button>Add to Cart</button>
+                </div>
+                <div class="movie-card movie-card-22">
+                    <img src="./images/garfiled.jpeg" alt="Premium Movie 1">
+                    <h3>Garfield Movie</h3>
+                    <p>Price: Rs 1400</p>
+                    <input type="number" value="0">
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+            
+        </section>
+
+        <section id="discount-offers" class="movie-section">
+            <h2>Discount Offers</h2>
+            <div class="movie-grid"> 
+                <div class="movie-card movie-card-23">
+                    <img src="./images/If.png" alt="Premium Movie 1">
+                    <h3>If</h3>
+                    <p>Price: Rs 1500</p>
+                    <input type="number" value="0">
+                    <button>Add to Cart</button>
+                </div>
+                <div class=" movie-card movie-card-24">
+                    <img src="./images/code_8_part_2.jpg" alt="Premium Movie 1">
+                    <h3>Code 8</h3>
+                    <p>Price: Rs 2000</p>
+                    <input type="number" value="0">
+                    <button>Add to Cart</button>
+                </div>
+                <div class="movie-card movie-card-25">
+                    <img src="./images/killer_heat.jpeg" alt="Premium Movie 1">
+                    <h3>killerheat</h3>
+                    <p>Price: Rs 3000</p>
+                    <input type="number" value="0">
+                    <button>Add to Cart</button>
+                </div>
+                <div class="movie-card movie-card-25">
+                    <img src="./images/Spectre.jpg" alt="Premium Movie 1">
+                    <h3>Spectre</h3>
+                    <p>Price: Rs 3000</p>
+                    <input type="number" value="0">
+                    <button>Add to Cart</button>
+                </div>
+           
+            </div>
+        </section>
+
+        <section id="cart">
+            <h2>Your Cart</h2>
+            <div id="cart-message"></div> 
+            <table id="cart-table">
+                <thead>
+                    <tr>
+                        <th>Movie</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2">Total:</td>
+                        <td id="total-price">0.00</td>
+                    </tr>
+                </tfoot>
+            </table>
+            <div class="cart-actions">
+                <button id="save-favourite">Save as Favourite</button>
+                <button id="apply-favourite">Apply Favourite</button>
+                <button id="proceed-checkout">Proceed to Checkout</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 CinemaSphere. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
