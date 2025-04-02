@@ -1,0 +1,54 @@
+/* General Mobile Styles */
+@media (max-width: 768px) {
+    #checkout-form input[type="text"],
+    #checkout-form input[type="email"],
+    #checkout-form input[type="tel"],
+    #checkout-form input[type="month"],
+    #checkout-form select {
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 10px; /* Add spacing between input fields */
+    }
+  
+    #checkout-form button[type="submit"] {
+      width: 100%;
+      padding: 15px;
+      font-size: 1.2em;
+    }
+  
+    #checkout-summary,
+    #checkout-form {
+      padding: 10px; /* Add padding to the sections */
+      margin-bottom: 20px; /* Add margin between sections */
+    }
+  
+    #checkout-cart-table {
+      width: 100%; /* Make table full width */
+    }
+  
+    #checkout-cart-table td,
+    #checkout-cart-table th {
+      display: block; /* Stack table cells vertically */
+      text-align: left;
+    }
+  
+    #checkout-cart-table thead {
+      display: none; /* Hide table header on mobile */
+    }
+  
+    #checkout-cart-table tr {
+      border: 1px solid #ccc; /* Add border to table rows */
+      margin-bottom: 10px;
+    }
+  
+    #checkout-cart-table td:before {
+      content: attr(data-label); /* Add data-label as content */
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+  
+    #checkout-cart-table td[data-label="Total:"] {
+      font-weight: bold;
+    }
+  }
