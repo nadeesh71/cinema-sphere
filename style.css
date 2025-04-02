@@ -257,3 +257,15 @@ nav#main-nav a.icon {
     height: 250px; /* Adjust as needed */
     object-fit: cover;
 }
+/* Target the container of the buttons */
+.cart-actions {
+    display: flex; /* Enable Flexbox */
+    justify-content: flex-start; /* Align items to the start of the container */
+    flex-wrap: wrap; /* Allow buttons to wrap to the next line if needed */
+  }
+  
+  /* Style the buttons themselves */
+  .cart-actions button {
+    margin-right: 10px; /* Add spacing between buttons */
+    margin-bottom: 10px; /* Add spacing between buttons vertically if they wrap */
+  }

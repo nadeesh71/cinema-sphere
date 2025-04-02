@@ -5,19 +5,19 @@ document.addEventListener('DOMContentLoaded', function() {
     let cart = [];
 
     addToCartButtons.forEach(button => {
-        button.addEventListener('click', function() { 
+        button.addEventListener('click', function() {
             const movieCard = this.parentElement;
             const movieTitle = movieCard.querySelector('h3').textContent;
             const priceText = movieCard.querySelector('p').textContent;
             const moviePrice = parseFloat(priceText.replace(/[^0-9.]/g, ''));
             const quantityInput = movieCard.querySelector('input[type="number"]');
-            const quantity = parseInt(quantityInput.value)
+            const quantity = parseInt(quantityInput.value);
             const movieImage = movieCard.querySelector('img').src;
 
             if (quantity > 0) {
                 const existingItem = cart.find(item => item.title === movieTitle);
                 if (existingItem) {
-                    existingItem.quantity += quantity; // Increase quantity if the movie already exists in the cart
+                    existingItem.quantity += quantity;
                 } else {
                     cart.push({
                         title: movieTitle,
@@ -28,11 +28,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 updateCartDisplay();
             }
-        }); 
+        });
     });
 
     function updateCartDisplay() {
-        cartTableBody.innerHTML = ''; // Clear the cart table body
+        cartTableBody.innerHTML = '';
         let total = 0;
 
         cart.forEach(item => {
@@ -60,11 +60,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Apply Favourite
     document.querySelector('#apply-favourite').addEventListener('click', function() {
         const favouriteCart = JSON.parse(localStorage.getItem('favouriteCart'));
-        console.log('favouriteCart from localStorage:', favouriteCart);
-
         if (favouriteCart && Array.isArray(favouriteCart)) {
             cart = favouriteCart;
-            console.log('Cart after applying favourite:', cart);
             updateCartDisplay();
             alert('Favourite cart applied!');
         } else {
@@ -77,23 +74,27 @@ document.addEventListener('DOMContentLoaded', function() {
         if (cart.length === 0) {
             alert('Your cart is empty. Please add movies to your cart.');
         } else {
-            localStorage.setItem('checkoutCart', JSON.stringify(cart)); // Store cart data
+            localStorage.setItem('checkoutCart', JSON.stringify(cart));
             window.location.href = 'checkout.html';
         }
     });
 
     // Toggle Navigation (responsive menu)
-    document.querySelector('#nav-toggle').addEventListener('click', toggleNav);
+    const navToggle = document.getElementById('nav-toggle');
+    if (navToggle) {
+        navToggle.addEventListener('click', toggleNav);
+    }
 
     function toggleNav() {
-        const nav = document.getElementById("main-nav");   
-        if (nav.className === "responsive") {
-            nav.className = "";
+        const nav = document.getElementById("main-nav");
+        if (nav.classList.contains("responsive")) {
+            nav.classList.remove("responsive");
         } else {
-            nav.className = "responsive";
+            nav.classList.add("responsive");
         }
     }
 });
+
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('/service-worker.js')
