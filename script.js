@@ -53,8 +53,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Save as Favourite
     document.querySelector('#save-favourite').addEventListener('click', function() {
-        localStorage.setItem('favouriteCart', JSON.stringify(cart));
-        alert('Cart saved as favourite!');
+        if (cart.length === 0) {
+            alert('Your cart is empty. Please add movies to your cart before saving as favorite.');
+        } else {
+            localStorage.setItem('favouriteCart', JSON.stringify(cart));
+            alert('Cart saved as favourite!');
+        }
     });
 
     // Apply Favourite
