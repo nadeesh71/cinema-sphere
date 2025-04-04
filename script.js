@@ -9,10 +9,17 @@ document.addEventListener('DOMContentLoaded', function() {
             const movieCard = this.parentElement;
             const movieTitle = movieCard.querySelector('h3').textContent;
             const priceText = movieCard.querySelector('p').textContent;
-            const moviePrice = parseFloat(priceText.replace(/[^0-9.]/g, ''));
             const quantityInput = movieCard.querySelector('input[type="number"]');
             const quantity = parseInt(quantityInput.value);
             const movieImage = movieCard.querySelector('img').src;
+
+            // Check if it's an upcoming movie BEFORE trying to parse price
+            if (priceText.includes('Release Date: Soon')) {
+                alert('We apologize, but tickets for upcoming movies are not yet available for purchase. Please check back closer to the release date.');
+                return; // Prevent adding THIS movie to cart, and continue the loop
+            }
+
+            const moviePrice = parseFloat(priceText.replace(/[^0-9.]/g, ''));
 
             if (quantity > 0) {
                 const existingItem = cart.find(item => item.title === movieTitle);
