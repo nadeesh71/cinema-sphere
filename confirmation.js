@@ -1,5 +1,5 @@
 const confirmationDetails = document.getElementById('confirmation-details');
-const message = localStorage.getItem('confirmationMessage');
+const message = localStorage.getItem('confirmationMessage');d
 
 if (confirmationDetails && message) {
     confirmationDetails.textContent = message;
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Get the confirmation details div
-    const confirmationDetailsDiv = document.getElementById('confirmation-details');
+    const confirmationDetailsDiv = document.getElementById('confirmation-details');            
 
     // Create the message with random data
     const message = `

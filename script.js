@@ -13,6 +13,12 @@ document.addEventListener('DOMContentLoaded', function() {
             const quantity = parseInt(quantityInput.value);
             const movieImage = movieCard.querySelector('img').src;
 
+            // Check for empty or non-numeric quantity
+            if (!quantity || quantity <= 0) {
+                alert('Please enter a valid quantity.');
+                return; // Prevent adding to cart
+            }
+
             // Check if it's an upcoming movie BEFORE trying to parse price
             if (priceText.includes('Release Date: Soon')) {
                 alert('We apologize, but tickets for upcoming movies are not yet available for purchase. Please check back closer to the release date.');

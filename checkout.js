@@ -10,6 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log("Payment processing...");
 
         // Redirect to the confirmation page
-        window.location.href = 'confirmation.html';
+        window.location.href = 'confirmation.htcdml';
     });
 });
