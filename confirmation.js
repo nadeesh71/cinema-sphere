@@ -1,45 +1,20 @@
-const confirmationDetails = document.getElementById('confirmation-details');
-const message = localStorage.getItem('confirmationMessage');d
-
-if (confirmationDetails && message) {
-    confirmationDetails.textContent = message;
-    localStorage.removeItem('confirmationMessage'); // Clear message
-}
 document.addEventListener('DOMContentLoaded', function() {
-    // Function to generate a random time in HH:MM format
-    function generateRandomTime() {
-        const hours = String(Math.floor(Math.random() * 24)).padStart(2, '0'); // 00 to 23
-        const minutes = String(Math.floor(Math.random() * 60)).padStart(2, '0'); // 00 to 59
-        return `${hours}:${minutes}`;
+    const urlParams = new URLSearchParams(window.location.search);
+    const name = urlParams.get('name');
+    const email = urlParams.get('email');
+    const phone = urlParams.get('phone');
+    const seatPref = urlParams.get('seat-pref');
+
+    const confirmationDetailsDiv = document.getElementById('confirmation-details');
+    if (name && email && phone && seatPref) {
+        confirmationDetailsDiv.innerHTML = `
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Phone:</strong> ${phone}</p>
+            <p><strong>Seat Preference:</strong> ${seatPref}</p>
+            <p>Your booking has been confirmed!</p>
+        `;
+    } else {
+        confirmationDetailsDiv.innerHTML = '<p>Booking details not found.</p>';
     }
-
-    // Generate random booking reference
-    function generateBookingReference() {
-        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-        let reference = '';
-        for (let i = 0; i < 8; i++) {
-            reference += characters.charAt(Math.floor(Math.random() * characters.length));
-        }
-        return reference;
-    }
-
-    // Generate random seat preference (for demonstration)
-    function generateSeatPreference() {
-        const seatOptions = ['Any', 'Front Row', 'Middle Row', 'Back Row', 'Aisle'];
-        return seatOptions[Math.floor(Math.random() * seatOptions.length)];
-    }
-
-    // Get the confirmation details div
-    const confirmationDetailsDiv = document.getElementById('confirmation-details');            
-
-    // Create the message with random data
-    const message = `
-        <p>Thank you for your purchase!</p>
-        <p>Booking Reference: ${generateBookingReference()}</p>
-        <p>Movie Time: ${generateRandomTime()}</p>
-        <p>Seat Preference: ${generateSeatPreference()}</p>
-    `;
-
-    // Set the message in the div
-    confirmationDetailsDiv.innerHTML = message;
 });

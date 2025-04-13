@@ -1,15 +1,41 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Get the payment form
+    // Display Cart Items
+    let cart = JSON.parse(localStorage.getItem('checkoutCart')) || [];
+    let cartTableBody = document.querySelector('#checkout-cart-table tbody');
+    let totalPriceElement = document.getElementById('checkout-total-price');
+    let totalPrice = 0;
+
+    cart.forEach(item => {
+        let row = cartTableBody.insertRow();
+        let movieCell = row.insertCell();
+        let quantityCell = row.insertCell();
+        let priceCell = row.insertCell();
+
+        movieCell.textContent = item.title;
+        quantityCell.textContent = item.quantity;
+        priceCell.textContent = 'Rs. ' + (item.price * item.quantity).toFixed(2);
+
+        totalPrice += item.price * item.quantity;
+    });
+
+    if (totalPriceElement) {
+        totalPriceElement.textContent = totalPrice.toFixed(2);
+    }
+
+    // Form Submission
     const paymentForm = document.getElementById('payment-form');
-
-    // Add event listener to the form submission (Pay button click)
     paymentForm.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent default form submission
+        event.preventDefault();
 
-        // Simulate payment processing (replace with actual logic if needed)
-        console.log("Payment processing...");
+        // Get form data
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const seatPref = document.getElementById('seat-pref').value;
+        //Do not send card details via url.
 
-        // Redirect to the confirmation page
-        window.location.href = 'confirmation.htcdml';
+        // Redirect to confirmation.html with URL parameters.
+        window.location.href = `confirmation.html?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&phone=${encodeURIComponent(phone)}&seat-pref=${encodeURIComponent(seatPref)}`;
+
     });
 });
